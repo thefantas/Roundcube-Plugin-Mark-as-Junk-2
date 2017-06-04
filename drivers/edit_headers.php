@@ -27,12 +27,12 @@ class markasjunk2_edit_headers
 {
 	public function spam(&$uids, $mbox)
 	{
-		$this->_edit_headers($uids, true);
+		$this->_edit_headers($uids, true, $mbox);
 	}
 
 	public function ham(&$uids, $mbox)
 	{
-		$this->_edit_headers($uids, false);
+		$this->_edit_headers($uids, false, $mbox);
 	}
 
 	private function _edit_headers(&$uids, $spam, $mbox)
