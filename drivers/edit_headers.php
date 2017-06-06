@@ -52,9 +52,9 @@ class markasjunk2_edit_headers
 			$raw_message = str_replace($raw_headers, $updated_headers, $raw_message);
 
 			$saved = $rcmail->storage->save_message($mbox, $raw_message);
-			$rcmail->storage->delete_message($uid, $mbox); //We delete on server because in the client duplicates the selection.
 			
 			if ($saved !== false) {
+				$rcmail->storage->delete_message($uid, $mbox); //We delete on server because in the client duplicates the selection.
 				$rcmail->output->command('rcmail_markasjunk2_move', null, $uid);
 				array_push($new_uids, $saved);
 			}
