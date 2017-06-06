@@ -53,7 +53,7 @@ class markasjunk2_edit_headers
 
 			$saved = $rcmail->storage->save_message($mbox, $raw_message);
 
-			if ($saved !== false) {
+			if (!$saved) {
 				$rcmail->output->command('rcmail_markasjunk2_move', null, $uid);
 				array_push($new_uids, $saved);
 			}
