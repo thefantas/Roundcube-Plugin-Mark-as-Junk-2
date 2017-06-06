@@ -88,8 +88,8 @@ rcube_webmail.prototype.rcmail_markasjunk2_move = function(mbox, uids) {
 
 	if (mbox)
 		rcmail.move_messages(mbox);
-	else
-		rcmail.delete_messages();
+	//else	//We delete on server because in the client duplicates the selection.
+	//	rcmail.delete_messages();
 
 	rcmail.env.uid = prev_uid;
 
